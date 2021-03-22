@@ -14,6 +14,7 @@ def listcustomers(request):
     # key是字段名 value是字段值
     qs=Customer.objects.values()
 
+
     #定义返回字符串
     resStr=''
     for customer in qs:
