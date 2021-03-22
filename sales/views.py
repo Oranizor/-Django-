@@ -22,4 +22,4 @@ def listcustomers(request):
             resStr+=f'{name}:{value}|'
         resStr+='<br>'
 
-    return HttpResponse(qs,resStr)
+    return HttpResponse(resStr)
