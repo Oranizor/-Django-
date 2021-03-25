@@ -23,6 +23,6 @@ from mgr.customer import dispatcher
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('guifan/shabi/sales/',listorders),
-    path('shabi/',listcustomers)
-    path('jianghuajuduodelaoshabi/',dispatcher)
+    path('allcustomers/',listcustomers),
+    path('dispatcher/',dispatcher),
 ]
