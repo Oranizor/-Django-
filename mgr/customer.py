@@ -4,6 +4,23 @@ import json
 from django.http import HttpResponse
 
 def dispatcher(request):
+
+    # 原来搞了这么久 还没做登陆的验证呢！
+    if 'usertype' not in request.session:
+        return JsonResponse({
+            'ret':302,
+            'msg':'未登录',
+            'redirect':'/mgr/sign.html',
+        },status=302)
+
+    if request.session['usertype']!='mgr':
+        return JsonResponse({
+            'ret':302,
+            'msg':'用户非mgr类型',
+            'redirect':'/mgr/sign.html'
+        },status=302)
+
+
     # 如果是GET属性 则把参数给到request.params
     print(type(request.body))
     # return HttpResponse("Body:" + str(json.loads(request.body)) + "Method:" + str(request.method))

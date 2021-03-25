@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from sales.views import listorders, listcustomers
 from mgr.customer import dispatcher
-
+from mgr.sigininout import signin,signout
 
 
 urlpatterns = [
@@ -25,4 +25,6 @@ urlpatterns = [
     path('guifan/shabi/sales/',listorders),
     path('allcustomers/',listcustomers),
     path('dispatcher/',dispatcher),
+    path('signin/',signin),
+    path('signout/',signout)
 ]
