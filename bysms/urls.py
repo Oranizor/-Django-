@@ -25,6 +25,6 @@ urlpatterns = [
     path('guifan/shabi/sales/',listorders),
     path('allcustomers/',listcustomers),
     path('dispatcher/',dispatcher),
-    path('signin/',signin),
-    path('signout/',signout)
+    path('adminsignin/',signin),
+    path('adminsignout/',signout)
 ]

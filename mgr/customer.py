@@ -4,7 +4,7 @@ import json
 from django.http import HttpResponse
 
 def dispatcher(request):
-
+    print(">>>dispatcher检查",request.session)
     # 原来搞了这么久 还没做登陆的验证呢！
     if 'usertype' not in request.session:
         return JsonResponse({
@@ -15,7 +15,6 @@ def dispatcher(request):
 
     if request.session['usertype']!='mgr':
         return JsonResponse({
-            'ret':302,
             'msg':'用户非mgr类型',
             'redirect':'/mgr/sign.html'
         },status=302)
