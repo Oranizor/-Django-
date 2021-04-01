@@ -17,14 +17,16 @@ from django.contrib import admin
 from django.urls import path
 from sales.views import listorders, listcustomers
 from mgr.customer import dispatcher
-from mgr.sigininout import signin,signout
-
+from mgr.sigininout import LoginView,signout,UserView
+from mgr import UserView as views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('guifan/shabi/sales/',listorders),
     path('allcustomers/',listcustomers),
+    path('userlist/',views.UserView.as_view()),
+    path('user/',UserView.as_view),
     path('dispatcher/',dispatcher),
-    path('adminsignin/',signin),
+    path('adminsignin/',LoginView.as_view()),
     path('adminsignout/',signout)
 ]
